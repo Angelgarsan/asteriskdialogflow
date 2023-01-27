@@ -7,14 +7,13 @@ require_once "/var/lib/asterisk/agi-bin/phpagi-2.20/phpagi.php";
 $agi = new AGI();
 
 // Get the question from the dialplan variable "question1"
-//$question = $agi->get_variable("question")['data'];
-$question = "Hola, cual es el costo del ingles intensivo";
+$question = $agi->get_variable("question")['data'];
 
 // Set the Dialogflow project ID 
-$project_id = "ags-test-onjk";
+$project_id = "YOUR_PROJECT_ID";
 
 // Set the path to the JSON service account credentials
-putenv('GOOGLE_APPLICATION_CREDENTIALS=/var/lib/asterisk/agi-bin/ags.json');
+putenv('GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json');
 
 // Get the access token from Google
 $client = new Google_Client();
